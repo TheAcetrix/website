@@ -1,0 +1,77 @@
+@import "../common/mixins.scss";
+
+.contact {
+  background-color: #111;
+  color: #fff;
+  height: 100vh;
+  z-index: 2;
+  position: relative;
+  padding: 3rem 0;
+  width: 100%;
+
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      margin-bottom: 3rem;
+
+      @include phone() {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      input,
+      textarea {
+        width: 60%;
+        padding: 1rem;
+        border: 1px solid #c788ff;
+        border-radius: 13px;
+        background-color: transparent;
+
+        @include phone() {
+          width: 100%;
+        }
+      }
+
+      .submitBTN {
+        width: 230px;
+      }
+    }
+  }
+
+  .socials {
+    position: absolute;
+    top: 30%;
+    right: 1.5%;
+    transform: translateY(-30%);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 2rem;
+
+    @include phone() {
+      display: none;
+    }
+
+    a {
+      background-color: #a13cfb;
+      padding: 0.7rem;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: #a13cfb;
+        background-color: #fff;
+      }
+    }
+  }
+}

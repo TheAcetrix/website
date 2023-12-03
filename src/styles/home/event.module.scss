@@ -1,0 +1,98 @@
+@import "../common/mixins";
+
+.eventSection {
+  background: url("/images/events-bg.png") no-repeat center center/cover;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 6rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    color: #c788ff;
+    text-align: center;
+  }
+
+  hr {
+    width: 95%;
+    margin: 1rem auto;
+    background-color: #fff;
+  }
+
+  .switch {
+    width: 95%;
+    margin: 1.5rem auto;
+
+    .wrapper {
+      width: fit-content;
+      display: flex;
+      gap: 1rem;
+      background: rgba(217, 217, 217, 0.2);
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.5s ease-in-out;
+
+      span {
+        border-radius: 15px;
+        padding: 0.2rem 2rem;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        background-color: #c788ff;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .eventContainer {
+    width: 95%;
+    margin: 4rem auto;
+
+    @include phone() {
+      margin: 2rem auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      line-height: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wrapper {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin: 0rem 0 2rem;
+      background: rgba(217, 217, 217, 0.2);
+      border-radius: 25px;
+      padding: 2rem;
+      overflow-x: scroll;
+
+      .img {
+        border-radius: 20px;
+        width: 300px;
+        height: 277px;
+      }
+    }
+  }
+
+  .galleryBtn {
+    width: 200px;
+    margin: 3rem auto 0;
+  }
+}

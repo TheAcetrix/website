@@ -1,0 +1,130 @@
+@import "../common/_mixins.scss";
+
+.main {
+  height: 100vh;
+  background: url("/images/home-bg.png") no-repeat center center/cover;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  .content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    z-index: 4;
+    width: 90%;
+
+    @include tablet-landscape() {
+      width: 60%;
+    }
+
+    @include desktop() {
+      width: 45%;
+    }
+
+    .logo {
+      width: 400px;
+      height: 145px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      line-height: 2.6rem;
+      font-weight: 600;
+      margin: 1rem 0;
+
+      @include phone() {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  .cta {
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, -62%);
+    z-index: 4;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    @include tablet() {
+      width: 50%;
+      top: 66%;
+      transform: translate(-50%, -66%);
+    }
+
+    @include tablet-landscape() {
+      width: 46%;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    @include desktop() {
+      top: 62%;
+      transform: translate(-50%, -62%);
+      width: 34%;
+    }
+  }
+
+  .borderTopDown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 98%;
+    border-top: 1.6px solid #c788ff88;
+    border-bottom: 1.6px solid #c788ff88;
+    z-index: 2;
+  }
+
+  .borderLeftUpper,
+  .borderLeftDown,
+  .borderRightUpper,
+  .borderRightDown {
+    position: fixed;
+    left: 50%;
+    width: 98%;
+    height: 35%;
+    z-index: 2;
+  }
+
+  .borderLeftUpper {
+    top: 1.92%;
+    transform: translate(-50%, -1.92%);
+    border-left: 1.6px solid #c788ff88;
+  }
+
+  .borderLeftDown {
+    bottom: 1.92%;
+    transform: translate(-50%, 1.92%);
+    border-left: 1.6px solid #c788ff88;
+  }
+
+  .borderRightUpper {
+    top: 1.92%;
+    right: 50%;
+    transform: translate(-50%, -1.92%);
+    border-right: 1.6px solid #c788ff88;
+  }
+
+  .borderRightDown {
+    bottom: 1.92%;
+    right: 50%;
+    transform: translate(-50%, 1.92%);
+    border-right: 1.6px solid #c788ff88;
+  }
+}
