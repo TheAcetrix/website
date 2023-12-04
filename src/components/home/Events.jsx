@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CallToAction } from "../buttons";
 import styles from "../../styles/home/event.module.scss";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const Events = () => {
   const [toggle, setToggle] = useState(false);
@@ -29,27 +30,36 @@ const Events = () => {
         <h2>Acetrix War League</h2>
 
         <div className={styles.wrapper}>
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
+          <Marquee>
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+          </Marquee>
         </div>
       </div>
 
@@ -57,28 +67,38 @@ const Events = () => {
         <h2>Valfire</h2>
 
         <div className={styles.wrapper}>
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
-          <Image
-            src={"/images/founder-img.jpg"}
-            alt="founder"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
+          <Marquee>
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+            <Image
+              src={"/images/founder-img.jpg"}
+              alt="founder"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
+          </Marquee>
         </div>
+        {/*  */}
         <div className={styles.galleryBtn}>
           <CallToAction href={"#"}>Gallery</CallToAction>
         </div>

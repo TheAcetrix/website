@@ -104,7 +104,6 @@
 
     .wrapper {
       display: flex;
-      gap: 2rem;
       align-items: center;
       margin: 0rem 0 2rem;
       background: rgba(217, 217, 217, 0.2);
@@ -116,6 +115,7 @@
         border-radius: 20px;
         width: 300px;
         height: 277px;
+        margin: 0 2rem;
       }
     }
   }
