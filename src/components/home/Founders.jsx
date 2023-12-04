@@ -29,7 +29,9 @@ const FounderCard = ({ quote, name, position, image }) => {
       />
 
       {/* name */}
-      <h3 className="m-0 mt-2 font-semibold">Founder Name {name && name}</h3>
+      <h3 className="m-0 mt-2 text-xl font-semibold">
+        Founder Name {name && name}
+      </h3>
 
       {/* position */}
       <h4 className="m-0 -mt-1 text-base text-[#c788ff]">Founder</h4>

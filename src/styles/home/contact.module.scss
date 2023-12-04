@@ -9,6 +9,10 @@
   padding: 3rem 0;
   width: 100%;
 
+  @include phone() {
+    padding: 3rem 1rem;
+  }
+
   .wrapper {
     width: 90%;
     margin: 0 auto;
@@ -20,6 +24,8 @@
       margin-bottom: 3rem;
 
       @include phone() {
+        font-size: 2rem;
+        line-height: 2.5rem;
         margin-bottom: 1rem;
       }
     }

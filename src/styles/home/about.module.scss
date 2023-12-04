@@ -4,7 +4,8 @@
   background: linear-gradient(180deg, #7c31bd 0%, #652b98 0.01%, #111 86.48%);
   color: #fff;
   font-size: 1.5rem;
-  padding: 3rem 1rem;
+  // padding: 3rem 1rem;
+  padding: 3rem 2rem;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -96,9 +97,14 @@
 
     h2 {
       color: #c788ff;
-      font-size: 3rem;
-      line-height: 3.4rem;
+      font-size: 2rem;
+      line-height: 2.4rem;
       font-weight: 700;
+
+      @include tablet() {
+        font-size: 3rem;
+        line-height: 3.4rem;
+      }
 
       @include desktop() {
         font-size: 4rem;
@@ -107,8 +113,12 @@
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
+
+      @include tablet() {
+        font-size: 1.2rem;
+      }
 
       @include desktop() {
         font-size: 1.5rem;
@@ -118,18 +128,27 @@
     .cta {
       display: flex;
       align-items: center;
-      gap: 3rem;
+      gap: 1rem;
+
+      @include tablet() {
+        gap: 3rem;
+      }
 
       @include tablet-landscape() {
         gap: 5rem;
       }
 
       .logo {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         object-fit: cover;
 
         @include tablet() {
+          width: 100px;
+          height: 100px;
+        }
+
+        @include tablet-landscape() {
           width: 150px;
           height: 150px;
         }

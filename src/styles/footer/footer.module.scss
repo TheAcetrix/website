@@ -8,6 +8,7 @@
     rgba(0, 0, 0, 0) 100%
   );
 
+  background-color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +16,10 @@
   padding: 2rem 0 1rem;
   z-index: 5;
   position: relative;
+
+  @include phone() {
+    height: 100vh;
+  }
 
   .wrapper {
     display: flex;
