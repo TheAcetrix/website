@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
+import { SectionWrapper } from "@/hoc";
+import styles from "../../styles/home/team.module.scss";
 
 import Marquee from "react-fast-marquee";
 
@@ -32,15 +36,18 @@ const UserCard = ({ styles, showUser, setShowUser, setUser }) => {
   );
 };
 
-const Team = ({ styles }) => {
+const Team = () => {
   const [user, setUser] = useState({ name: "", role: "" });
   const [showUser, setShowUser] = useState(false);
 
   return (
     <div className={styles.team}>
-      <h1>Core Team</h1>
+      <motion.h1 variants={textVariant(0.2)}>Core Team</motion.h1>
 
-      <div className={styles.teamContainer}>
+      <motion.div
+        variants={fadeIn("up", "spring", 0.3, 1)}
+        className={styles.teamContainer}
+      >
         <Marquee>
           <UserCard
             styles={styles}
@@ -73,14 +80,17 @@ const Team = ({ styles }) => {
             setUser={setUser}
           />
         </Marquee>
-      </div>
+      </motion.div>
 
-      <div className={styles.userInfo + " "}>
+      <motion.div
+        variants={fadeIn("", "spring", 0.8, 1)}
+        className={styles.userInfo + " "}
+      >
         <h2>{user.name || "Awesome people behind acetrix"}</h2>
         <p>{user.role || "<3"}</p>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-export default Team;
+export default SectionWrapper(Team, "team");

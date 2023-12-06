@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CallToAction } from "../buttons";
 import Image from "next/image";
 import styles from "../../styles/home/about.module.scss";
+import { SectionWrapper } from "@/hoc";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
 
 const About = () => {
   return (
-    <section className={styles.aboutPage}>
+    <div className={styles.aboutPage}>
       {/* image box */}
-      <div className={styles.imageBox}>
+      <motion.div variants={zoomIn(0.1, 0.7)} className={styles.imageBox}>
         <Image
           src={"/images/about-us-image.png"}
           alt="acetrix"
@@ -15,9 +18,9 @@ const About = () => {
           height={500}
           className={styles.aboutImage}
         />
-      </div>
+      </motion.div>
 
-      <div className={styles.content}>
+      <motion.div variants={textVariant()} className={styles.content}>
         <h2>About Us</h2>
 
         <p>
@@ -38,12 +41,21 @@ const About = () => {
             className={styles.logo}
           />
         </div>
-      </div>
-      <div className={styles.filledCircle}></div>
-      <div className={styles.outlineCircle}></div>
-      <div className={styles.filledRectangle}></div>
-    </section>
+      </motion.div>
+      <motion.div
+        variants={slideIn("right", "tween", 0.1, 1)}
+        className={styles.filledCircle}
+      ></motion.div>
+      <motion.div
+        variants={slideIn("left", "tween", 0.1, 1)}
+        className={styles.outlineCircle}
+      ></motion.div>
+      <motion.div
+        variants={slideIn("right", "tween", 0.1, 1)}
+        className={styles.filledRectangle}
+      ></motion.div>
+    </div>
   );
 };
 
-export default About;
+export default SectionWrapper(About, "about");

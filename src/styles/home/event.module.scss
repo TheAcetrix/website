@@ -81,7 +81,7 @@
   }
 
   .eventContainer {
-    width: 95%;
+    width: 90%;
     margin: 4rem auto;
 
     @include phone() {
@@ -111,11 +111,20 @@
       padding: 2rem;
       overflow-x: scroll;
 
+      @include phone() {
+        padding: 1rem;
+      }
+
       .img {
         border-radius: 20px;
-        width: 300px;
-        height: 277px;
+        width: 250px;
+        height: 227px;
         margin: 0 2rem;
+
+        @include phone() {
+          width: 200px;
+          height: 185px;
+        }
       }
     }
   }

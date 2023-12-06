@@ -3,16 +3,22 @@ import { CallToAction } from "../buttons";
 import styles from "../../styles/home/event.module.scss";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { SectionWrapper } from "@/hoc";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
 
 const Events = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <div className={styles.eventSection}>
-      <h1>Events</h1>
+      <motion.h1 variants={textVariant()}>Events</motion.h1>
       <hr />
 
-      <div className={styles.switch}>
+      <motion.div
+        variants={fadeIn("up", "spring", 0.3, 1)}
+        className={styles.switch}
+      >
         <div className={styles.wrapper}>
           <span onClick={() => setToggle(true)}>Online</span>
           <span onClick={() => setToggle(false)}>Offline</span>
@@ -24,9 +30,12 @@ const Events = () => {
             }
           ></span>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={styles.eventContainer}>
+      <motion.div
+        variants={fadeIn("right", "tween", 1 * 0.4, 1)}
+        className={styles.eventContainer}
+      >
         <h2>Acetrix War League</h2>
 
         <div className={styles.wrapper}>
@@ -61,9 +70,12 @@ const Events = () => {
             />
           </Marquee>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={styles.eventContainer}>
+      <motion.div
+        variants={fadeIn("right", "tween", 2 * 0.4, 1)}
+        className={styles.eventContainer}
+      >
         <h2>Valfire</h2>
 
         <div className={styles.wrapper}>
@@ -102,9 +114,9 @@ const Events = () => {
         <div className={styles.galleryBtn}>
           <CallToAction href={"#"}>Gallery</CallToAction>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-export default Events;
+export default SectionWrapper(Events, "events");

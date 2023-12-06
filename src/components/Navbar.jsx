@@ -43,7 +43,7 @@ const Navbar = () => {
             !showDrawer ? "hidden" : "flex"
           }`}
         >
-          <NavLink href="/about" icon={<IoHome />}>
+          <NavLink href="#about" icon={<IoHome />}>
             About
           </NavLink>
           <NavLink href="/about" icon={<IoHome />}>

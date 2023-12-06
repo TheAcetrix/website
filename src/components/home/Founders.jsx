@@ -4,9 +4,16 @@ import { FaQuoteLeft } from "react-icons/fa";
 import Image from "next/image";
 import Team from "./Team";
 
-const FounderCard = ({ quote, name, position, image }) => {
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
+import { SectionWrapper } from "@/hoc";
+
+const FounderCard = ({ quote, name, position, image, index }) => {
   return (
-    <div className={styles.founderCard}>
+    <motion.div
+      variants={fadeIn("", "spring", index * 0.5, 0.75)}
+      className={styles.founderCard}
+    >
       {/* quote icon */}
       <FaQuoteLeft className={styles.quoteIcon + " w-6 h-6"} />
 
@@ -35,7 +42,7 @@ const FounderCard = ({ quote, name, position, image }) => {
 
       {/* position */}
       <h4 className="m-0 -mt-1 text-base text-[#c788ff]">Founder</h4>
-    </div>
+    </motion.div>
   );
 };
 
@@ -43,17 +50,17 @@ const Founders = () => {
   return (
     <>
       <div className={styles.founders}>
-        <h1>Meet the founders</h1>
+        <motion.h1 variants={textVariant()}>Meet the founders</motion.h1>
 
         <div className={styles.foundersContainer}>
-          <FounderCard />
-          <FounderCard name={"dio"} />
-          <FounderCard />
+          <FounderCard index={2} />
+          <FounderCard name={"dio"} index={1} />
+          <FounderCard index={3} />
         </div>
       </div>
-      <Team styles={styles} />
+      <Team />
     </>
   );
 };
 
-export default Founders;
+export default SectionWrapper(Founders, "founder");

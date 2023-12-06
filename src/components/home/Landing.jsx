@@ -3,8 +3,11 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
 import { CallToAction } from "../buttons";
 import Image from "next/image";
 import styles from "../../styles/home/landing.module.scss";
+import { SectionWrapper } from "@/hoc";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
 
-const landing = () => {
+const Landing = () => {
   return (
     <main className={styles.main}>
       <div className={styles.borderTopDown}></div>
@@ -22,20 +25,22 @@ const landing = () => {
         />
 
         {/* text */}
-        <h2>
+        <motion.h2 variants={textVariant()}>
           We create environment for you to escape the boring college life.
-        </h2>
+        </motion.h2>
       </div>
 
       {/* cta */}
       <div className={styles.cta}>
         <CallToAction
+          variants={zoomIn(0.3, 0.3)}
           href="https://discord.gg/acetrix"
           icon={<FaDiscord className="w-6 h-6" />}
         >
           Join Discord
         </CallToAction>
         <CallToAction
+          variants={zoomIn(0.3, 0.3)}
           href="https://discord.gg/acetrix"
           icon={<FaYoutube className="w-6 h-6" />}
         >
@@ -46,4 +51,4 @@ const landing = () => {
   );
 };
 
-export default landing;
+export default SectionWrapper(Landing, "home");

@@ -2,61 +2,85 @@ import React from "react";
 import styles from "../styles/footer/footer.module.scss";
 import Image from "next/image";
 import { FaDiscord, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { SectionWrapper } from "@/hoc";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
+import { events, pageLinks, socials } from "../configs/footer.config";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
-        {/* logo */}
-        <Image
-          src="/images/logo-main.png"
-          alt="acetrix logo"
-          width={700}
-          height={700}
-          className={styles.logo}
-        />
+        <motion.div variants={fadeIn("", "spring", 0.1, 1)}>
+          {/* logo */}
+          <Image
+            src="/images/logo-main.png"
+            alt="acetrix logo"
+            width={700}
+            height={700}
+            className={styles.logo}
+          />
+        </motion.div>
 
         <div className={styles.linksContainer}>
           <div className={styles.linkWrapper}>
-            {/* about */}
-            <a href="#">About</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
+            {[...pageLinks].map((link, index) => (
+              <motion.a
+                variants={fadeIn("up", "tween", index * 0.2, 0.1)}
+                href={link.path}
+              >
+                {link.name}
+              </motion.a>
+            ))}
           </div>
 
           <div className={styles.linkWrapper}>
-            <a href="#">Jod o Wot</a>
-            <a href="#">Valfire</a>
-            <a href="#">COD</a>
+            {[...events].map((link, index) => (
+              <motion.a
+                variants={fadeIn("up", "tween", index * 0.2, 0.1)}
+                href={link.path}
+              >
+                {link.name}
+              </motion.a>
+            ))}
           </div>
 
           <div className={styles.socialLinkContainer}>
             <p>Our Socials</p>
 
             <div className={styles.socialWrapper}>
-              <a href="#">
-                <FaInstagram className="w-5 h-5" />
-              </a>
-              <a href="#">
-                <FaDiscord className="w-5 h-5" />
-              </a>
+              {[...socials].splice(0, 2).map((social, index) => (
+                <motion.a
+                  variants={fadeIn("up", "tween", 1 * 0.2, 0.1)}
+                  href={social.path}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
             </div>
 
             <div className={styles.socialWrapper}>
-              <a href="#">
-                <FaYoutube className="w-5 h-5" />
-              </a>
-              <a href="#">
-                <FaLinkedin className="w-5 h-5" />
-              </a>
+              {[...socials].splice(2, 4).map((social, index) => (
+                <motion.a
+                  variants={fadeIn("up", "tween", 2 * 0.2, 0.1)}
+                  href={social.path}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      <p className={styles.copyright}>Copyright@Acetrix2022</p>
+      <motion.p
+        variants={fadeIn("up", "spring", 0.5, 1)}
+        className={styles.copyright}
+      >
+        Copyright@Acetrix2022
+      </motion.p>
     </footer>
   );
 };
 
-export default Footer;
+export default SectionWrapper(Footer, "footer");
