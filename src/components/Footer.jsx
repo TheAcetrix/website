@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
-        <motion.div variants={fadeIn("", "spring", 0.1, 1)}>
+        <motion.div variants={fadeIn("", "spring", "", 1)}>
           {/* logo */}
           <Image
             src="/images/logo-main.png"
@@ -26,7 +26,8 @@ const Footer = () => {
           <div className={styles.linkWrapper}>
             {[...pageLinks].map((link, index) => (
               <motion.a
-                variants={fadeIn("up", "tween", index * 0.2, 0.1)}
+                key={index}
+                variants={fadeIn("up", "spring", index * 0.1, 0.75)}
                 href={link.path}
               >
                 {link.name}
@@ -37,7 +38,8 @@ const Footer = () => {
           <div className={styles.linkWrapper}>
             {[...events].map((link, index) => (
               <motion.a
-                variants={fadeIn("up", "tween", index * 0.2, 0.1)}
+                key={index}
+                variants={fadeIn("up", "spring", index * 0.1, 0.75)}
                 href={link.path}
               >
                 {link.name}
@@ -51,7 +53,8 @@ const Footer = () => {
             <div className={styles.socialWrapper}>
               {[...socials].splice(0, 2).map((social, index) => (
                 <motion.a
-                  variants={fadeIn("up", "tween", 1 * 0.2, 0.1)}
+                  key={index}
+                  variants={fadeIn("up", "spring", 1 * 0.1, 0.75)}
                   href={social.path}
                 >
                   {social.icon}
@@ -62,7 +65,8 @@ const Footer = () => {
             <div className={styles.socialWrapper}>
               {[...socials].splice(2, 4).map((social, index) => (
                 <motion.a
-                  variants={fadeIn("up", "tween", 2 * 0.2, 0.1)}
+                  key={index}
+                  variants={fadeIn("up", "spring", 2 * 0.1, 0.75)}
                   href={social.path}
                 >
                   {social.icon}

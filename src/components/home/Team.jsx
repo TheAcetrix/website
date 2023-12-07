@@ -45,7 +45,7 @@ const Team = () => {
       <motion.h1 variants={textVariant(0.2)}>Core Team</motion.h1>
 
       <motion.div
-        variants={fadeIn("up", "spring", 0.3, 1)}
+        variants={fadeIn("up", "spring", 0.6, 1.25)}
         className={styles.teamContainer}
       >
         <Marquee>
@@ -83,7 +83,7 @@ const Team = () => {
       </motion.div>
 
       <motion.div
-        variants={fadeIn("", "spring", 0.8, 1)}
+        variants={fadeIn("up", "spring", 1, 1.45)}
         className={styles.userInfo + " "}
       >
         <h2>{user.name || "Awesome people behind acetrix"}</h2>

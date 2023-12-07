@@ -7,6 +7,7 @@
   padding: 6rem 1rem 3rem;
   position: relative;
   z-index: 1;
+  background-attachment: fixed;
 
   @include phone() {
     padding: 4rem 1rem 2rem;

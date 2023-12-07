@@ -14,7 +14,7 @@ const Contact = () => {
 
         {/* form */}
         <motion.form
-          variants={fadeIn("up", "spring", 0.3, 1)}
+          variants={fadeIn("up", "spring", 0.3, 1.25)}
           className={styles.form}
         >
           <div className={styles.inputContainer}>
@@ -43,7 +43,7 @@ const Contact = () => {
 
       {/* socials */}
       <motion.div
-        variants={fadeIn("left", "spring", 0.5, 1)}
+        variants={fadeIn("left", "spring", 0.5, 1.25)}
         className={styles.socials}
       >
         <a href="#">

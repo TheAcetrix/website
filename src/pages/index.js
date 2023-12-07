@@ -10,6 +10,7 @@ import Team from "@/components/home/Team";
 import Footer from "@/components/Footer";
 import Contact from "@/components/home/Contact";
 import Events from "@/components/home/Events";
+import LoadingAnimation from "@/components/Loading";
 
 export default function Home() {
   useEffect(() => {

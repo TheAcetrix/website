@@ -16,7 +16,7 @@ const Events = () => {
       <hr />
 
       <motion.div
-        variants={fadeIn("up", "spring", 0.3, 1)}
+        variants={fadeIn("up", "spring", 0.3, 1.25)}
         className={styles.switch}
       >
         <div className={styles.wrapper}>
@@ -33,7 +33,7 @@ const Events = () => {
       </motion.div>
 
       <motion.div
-        variants={fadeIn("right", "tween", 1 * 0.4, 1)}
+        variants={fadeIn("right", "spring", 1 * 0.8, 1.25)}
         className={styles.eventContainer}
       >
         <h2>Acetrix War League</h2>
@@ -73,7 +73,7 @@ const Events = () => {
       </motion.div>
 
       <motion.div
-        variants={fadeIn("right", "tween", 2 * 0.4, 1)}
+        variants={fadeIn("right", "spring", 2 * 0.8, 1.25)}
         className={styles.eventContainer}
       >
         <h2>Valfire</h2>
