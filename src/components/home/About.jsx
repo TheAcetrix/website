@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className={styles.aboutPage}>
       {/* image box */}
-      <motion.div variants={zoomIn(0.1, 0.7)} className={styles.imageBox}>
+      <motion.div variants={zoomIn(0.1, 1.25)} className={styles.imageBox}>
         <Image
           src={"/images/about-us-image.png"}
           alt="acetrix"
@@ -20,7 +20,7 @@ const About = () => {
         />
       </motion.div>
 
-      <motion.div variants={textVariant()} className={styles.content}>
+      <motion.div variants={textVariant(0.2, 1.5)} className={styles.content}>
         <h2>About Us</h2>
 
         <p>
@@ -43,15 +43,15 @@ const About = () => {
         </div>
       </motion.div>
       <motion.div
-        variants={slideIn("right", "tween", 0.1, 1)}
+        variants={slideIn("right", "tween", 0.1, 0.75)}
         className={styles.filledCircle}
       ></motion.div>
       <motion.div
-        variants={slideIn("left", "tween", 0.1, 1)}
+        variants={slideIn("left", "tween", 0.1 * 2, 0.75)}
         className={styles.outlineCircle}
       ></motion.div>
       <motion.div
-        variants={slideIn("right", "tween", 0.1, 1)}
+        variants={slideIn("right", "tween", 0.1 * 3, 0.75)}
         className={styles.filledRectangle}
       ></motion.div>
     </div>

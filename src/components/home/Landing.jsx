@@ -33,14 +33,14 @@ const Landing = () => {
       {/* cta */}
       <div className={styles.cta}>
         <CallToAction
-          variants={zoomIn(0.3, 0.3)}
+          variants={zoomIn(0.3, 0.75)}
           href="https://discord.gg/acetrix"
           icon={<FaDiscord className="w-6 h-6" />}
         >
           Join Discord
         </CallToAction>
         <CallToAction
-          variants={zoomIn(0.3, 0.3)}
+          variants={zoomIn(0.3, 0.75)}
           href="https://discord.gg/acetrix"
           icon={<FaYoutube className="w-6 h-6" />}
         >

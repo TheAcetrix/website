@@ -40,7 +40,7 @@ const Navbar = () => {
         {/* navlinks */}
         <div
           className={`${styles.navlinkContainer}  ${
-            !showDrawer ? "hidden" : "flex"
+            !showDrawer ? "opacity-0" : "opacity-100"
           }`}
         >
           <NavLink href="#about" icon={<IoHome />}>

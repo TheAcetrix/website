@@ -59,11 +59,11 @@
     .userCard {
       margin: 2rem;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
     }
 
     .userCard:hover {
       transform: scale(1.4);
-      transition: all 0.3s ease-in-out;
     }
   }
 
