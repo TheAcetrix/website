@@ -1,37 +1,40 @@
 import React, { useState } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
 import { SectionWrapper } from "@/hoc";
 import styles from "../../styles/home/team.module.scss";
 
 import Marquee from "react-fast-marquee";
+import { leads } from "@/configs/leads.config";
 
-const UserCard = ({ styles, showUser, setShowUser, setUser }) => {
+const UserCard = ({ styles, user, showUser, setShowUser, setUser }) => {
   return (
     <div
       className={styles.userCard + " group"}
       onMouseEnter={() => {
         setShowUser(true);
-        setUser({ name: "Kirua", role: "binod" });
+        setUser({ name: user.name, role: user.role });
       }}
       onMouseOver={() => {
         setShowUser(true);
-        setUser({ name: "Kirua", role: "binod" });
+        setUser({ name: user.name, role: user.role });
       }}
       onMouseLeave={() => {
         setShowUser(false);
         setUser({ name: "", role: "" });
       }}
     >
-      <Image
-        src={"/images/founder-img.jpg"}
-        alt="founder"
-        width={200}
-        height={200}
-        className="rounded-full  w-20 h-20 md:w-40 md:h-40 ring-2 ring-[#c788ff] group-hover:ring-white transition-all duration-500 ease-in-out"
-      />
+      <a href={user.link}>
+        <Image
+          src={user.image}
+          alt="founder"
+          width={200}
+          height={200}
+          className="rounded-full  w-20 h-20 md:w-40 md:h-40 ring-2 ring-[#c788ff] group-hover:ring-white transition-all duration-500 ease-in-out"
+        />
+      </a>
     </div>
   );
 };
@@ -49,36 +52,16 @@ const Team = () => {
         className={styles.teamContainer}
       >
         <Marquee>
-          <UserCard
-            styles={styles}
-            showUser={showUser}
-            setShowUser={setShowUser}
-            setUser={setUser}
-          />
-          <UserCard
-            styles={styles}
-            showUser={showUser}
-            setShowUser={setShowUser}
-            setUser={setUser}
-          />
-          <UserCard
-            styles={styles}
-            showUser={showUser}
-            setShowUser={setShowUser}
-            setUser={setUser}
-          />
-          <UserCard
-            styles={styles}
-            showUser={showUser}
-            setShowUser={setShowUser}
-            setUser={setUser}
-          />
-          <UserCard
-            styles={styles}
-            showUser={showUser}
-            setShowUser={setShowUser}
-            setUser={setUser}
-          />
+          {[...leads].map((lead, idx) => (
+            <UserCard
+              key={idx}
+              user={lead}
+              styles={styles}
+              showUser={showUser}
+              setShowUser={setShowUser}
+              setUser={setUser}
+            />
+          ))}
         </Marquee>
       </motion.div>
 

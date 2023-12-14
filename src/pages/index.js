@@ -11,8 +11,16 @@ import Footer from "@/components/Footer";
 import Contact from "@/components/home/Contact";
 import Events from "@/components/home/Events";
 import LoadingAnimation from "@/components/Loading";
+import { getEvents, getFounders } from "@/lib/appwrite";
+import { useMyContext } from "@/context";
 
-export default function Home() {
+export default function Home({ eventsArr }) {
+  const { setEventsData } = useMyContext();
+
+  useEffect(() => {
+    setEventsData(eventsArr);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -35,4 +43,14 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const events = await getEvents();
+
+  console.log("events", events);
+
+  return {
+    props: { eventsArr: events },
+  };
 }

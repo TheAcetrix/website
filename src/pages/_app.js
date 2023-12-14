@@ -2,6 +2,7 @@ import "@/styles/globals.scss";
 import { Poppins } from "next/font/google";
 import LoadingAnimation from "../components/Loading";
 import { useEffect, useState } from "react";
+import { ContextProvider } from "@/context";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -9,7 +10,8 @@ const poppins = Poppins({
 });
 
 function MyApp({ Component, pageProps }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,9 +22,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className={poppins.className + " acetrix-main"}>
-      {loading ? <LoadingAnimation /> : <Component {...pageProps} />}
-    </div>
+    <ContextProvider>
+      <div className={poppins.className + " acetrix-main"}>
+        {loading ? <LoadingAnimation /> : <Component {...pageProps} />}
+      </div>
+    </ContextProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CallToAction } from "../buttons";
 import styles from "../../styles/home/event.module.scss";
 import Image from "next/image";
@@ -6,12 +6,66 @@ import Marquee from "react-fast-marquee";
 import { SectionWrapper } from "@/hoc";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeIn, slideIn, textVariant, zoomIn } from "@/utils/motion";
+import { useMyContext } from "@/context";
 
 const Events = () => {
-  const [toggle, setToggle] = useState(false);
+  const [mode, setMode] = useState("");
+  const { eventsData } = useMyContext();
+  const eventRef = useRef(null);
+
+  const [arr, setArr] = useState([]);
+
+  useEffect(() => {
+    setMode("online");
+  }, []);
+
+  useEffect(() => {
+    if (mode === "online") {
+      setArr(eventsData.filter((event) => event.type === "online"));
+    } else {
+      setArr(eventsData.filter((event) => event.type === "offline"));
+    }
+
+    window.scrollTo({
+      top: eventRef.current.offsetTop,
+    });
+  }, [mode]);
+
+  console.log({ arr });
+
+  const EventsContainer = useCallback(
+    ({ event, idx }) => {
+      return (
+        <div
+          key={mode + idx}
+          variants={fadeIn("right", "spring", 1 * 0.8, 1.25)}
+          className={styles.eventContainer}
+        >
+          <h2>{event.title}</h2>
+          {console.log(event)}
+
+          <div className={styles.wrapper}>
+            <Marquee autoFill>
+              {event.images.map((img, jdx) => (
+                <Image
+                  key={jdx}
+                  src={img || "/images/founder-img.jpg"}
+                  alt={event.title}
+                  width={200}
+                  height={200}
+                  className={styles.img}
+                />
+              ))}
+            </Marquee>
+          </div>
+        </div>
+      );
+    },
+    [arr, mode]
+  );
 
   return (
-    <div className={styles.eventSection}>
+    <div className={styles.eventSection} ref={eventRef}>
       <motion.h1 variants={textVariant()}>Events</motion.h1>
       <hr />
 
@@ -20,17 +74,21 @@ const Events = () => {
         className={styles.switch}
       >
         <div className={styles.wrapper}>
-          <span onClick={() => setToggle(true)}>Online</span>
-          <span onClick={() => setToggle(false)}>Offline</span>
+          <span onClick={() => setMode("online")}>Online</span>
+          <span onClick={() => setMode("offline")}>Offline</span>
           <span
             className={
               styles.overlay +
               " " +
-              `${toggle ? "translate-x-0" : "translate-x-full"}`
+              `${mode === "online" ? "translate-x-0" : "translate-x-full"}`
             }
           ></span>
         </div>
       </motion.div>
+
+      {[...arr].map((event, idx) => (
+        <EventsContainer key={idx} event={event} idx={idx} />
+      ))}
 
       <motion.div
         variants={fadeIn("right", "spring", 1 * 0.8, 1.25)}
