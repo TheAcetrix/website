@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 function MyApp({ Component, pageProps }) {
-  const [loading, setLoading] = useState(false);
-  // const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

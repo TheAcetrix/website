@@ -48,7 +48,7 @@ export default function Home({ eventsArr }) {
 export async function getStaticProps() {
   const events = await getEvents();
 
-  console.log("events", events);
+  // console.log("events", events);
 
   return {
     props: { eventsArr: events },

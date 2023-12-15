@@ -11,7 +11,6 @@ import { useMyContext } from "@/context";
 const Events = () => {
   const [mode, setMode] = useState("");
   const { eventsData } = useMyContext();
-  const eventRef = useRef(null);
 
   const [arr, setArr] = useState([]);
 
@@ -25,13 +24,9 @@ const Events = () => {
     } else {
       setArr(eventsData.filter((event) => event.type === "offline"));
     }
-
-    window.scrollTo({
-      top: eventRef.current.offsetTop,
-    });
   }, [mode]);
 
-  console.log({ arr });
+  // console.log({ arr });
 
   const EventsContainer = useCallback(
     ({ event, idx }) => {
@@ -42,7 +37,7 @@ const Events = () => {
           className={styles.eventContainer}
         >
           <h2>{event.title}</h2>
-          {console.log(event)}
+          {/* {console.log(event)} */}
 
           <div className={styles.wrapper}>
             <Marquee autoFill>
@@ -65,7 +60,7 @@ const Events = () => {
   );
 
   return (
-    <div className={styles.eventSection} ref={eventRef}>
+    <div className={styles.eventSection}>
       <motion.h1 variants={textVariant()}>Events</motion.h1>
       <hr />
 
