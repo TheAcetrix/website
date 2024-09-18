@@ -24,8 +24,12 @@ const About = () => {
         <h2>About Us</h2>
 
         <p>
-          We are Esports gaming community. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Commodi eiusquo ut omnis fuga qui dicta
+Welcome to Acetrix, the heart of gaming at Shri Shankaracharya
+Technical Campus (SSTC), Bhilai! Born from a shared passion for
+gaming, Acetrix is where competition meets creativity, and
+gamers from every corner of campus come together to push
+their limits.
+
         </p>
 
         <div className={styles.cta}>
