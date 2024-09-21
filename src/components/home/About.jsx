@@ -24,8 +24,9 @@ const About = () => {
         <h2>About Us</h2>
 
         <p>
-          We are Esports gaming community. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Commodi eiusquo ut omnis fuga qui dicta
+          Welcome to Acetrix, SSTC Bhilai's Founded by passionate gamers, we unite the campus with epic 
+          events collaborate with IGDC, host game jams. Whether you're a pro or just love gaming, 
+          Acetrix has something for you!
         </p>
 
         <div className={styles.cta}>
