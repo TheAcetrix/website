@@ -43,14 +43,15 @@ const Navbar = () => {
             !showDrawer ? "opacity-0" : "opacity-100"
           }`}
         >
-          <NavLink href="#about" icon={<IoHome />}>
-            About
+          {/* <NavLink href="#" icon={<IoHome />}> */}
+          <NavLink href="#">
+          <span>Home&nbsp;</span>
           </NavLink>
-          <NavLink href="/about" icon={<IoHome />}>
-            About
+          <NavLink href="#about">
+          <span>About&nbsp;</span>
           </NavLink>
-          <NavLink href="/about" icon={<IoHome />}>
-            About
+          <NavLink href="#contact">
+          <span>Contact&nbsp;Us</span>
           </NavLink>
         </div>
       </div>
