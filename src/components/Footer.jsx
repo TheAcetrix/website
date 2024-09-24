@@ -81,7 +81,7 @@ const Footer = () => {
         variants={fadeIn("up", "spring", 0.5, 1)}
         className={styles.copyright}
       >
-        Copyright@Acetrix2022
+        Copyright@ACETRIX2024
       </motion.p>
     </footer>
   );
