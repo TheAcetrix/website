@@ -26,7 +26,7 @@ const Landing = () => {
 
         {/* text */}
         <motion.h2 variants={textVariant()}>
-          We create environment for you to escape the boring college life.
+          Official Gaming Community of Shri Shankaracharya Technical Campus.
         </motion.h2>
       </div>
 
@@ -37,11 +37,11 @@ const Landing = () => {
           href="https://discord.gg/acetrix"
           icon={<FaDiscord className="w-6 h-6" />}
         >
-          Join Discord
+          Discord
         </CallToAction>
         <CallToAction
           variants={zoomIn(0.3, 0.75)}
-          href="https://discord.gg/acetrix"
+          href="https://www.youtube.com/@acetrix2022"
           icon={<FaYoutube className="w-6 h-6" />}
         >
           Subscribe
