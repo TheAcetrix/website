@@ -26,7 +26,7 @@ const Landing = () => {
 
         {/* text */}
         <motion.h2 variants={textVariant()}>
-          Official Gaming Community of Shri Shankaracharya Technical Campus.
+          Official Gaming Community of SSTC.
         </motion.h2>
       </div>
 
