@@ -24,7 +24,7 @@ const About = () => {
         <h2>About Us</h2>
 
         <p>
-          Welcome to Acetrix, SSTC Bhilai's Founded by passionate gamers, we unite the campus with epic 
+          Welcome to Acetrix, Founded by passionate gamers, we unite the campus with epic 
           events collaborate with IGDC, host game jams. Whether you're a pro or just love gaming, 
           Acetrix has something for you!
         </p>

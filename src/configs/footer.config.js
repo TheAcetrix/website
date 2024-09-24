@@ -25,7 +25,7 @@ export const events = [
     path: "#",
   },
   {
-    name: "COD",
+    name: "AWL",
     path: "#",
   },
 ];
@@ -33,22 +33,22 @@ export const events = [
 export const socials = [
   {
     name: "instagram",
-    path: "#",
+    path: "https://www.instagram.com/acetrixofficial/?igsh=MWN4c2Y4NW1qOGhzOA%3D%3D",
     icon: <FaInstagram className="w-5 h-5" />,
   },
   {
     name: "discord",
-    path: "#",
+    path: "https://discord.com/invite/kCVCtEVs4f",
     icon: <FaDiscord className="w-5 h-5" />,
   },
   {
     name: "youtube",
-    path: "#",
+    path: "https://www.youtube.com/@acetrix2022",
     icon: <FaYoutube className="w-5 h-5" />,
   },
   {
     name: "linkedin",
-    path: "#",
+    path: "https://www.linkedin.com/company/acetrix/",
     icon: <FaLinkedin className="w-5 h-5" />,
   },
 ];

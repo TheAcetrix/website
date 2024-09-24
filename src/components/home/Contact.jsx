@@ -46,16 +46,16 @@ const Contact = () => {
         variants={fadeIn("left", "spring", 0.5, 1.25)}
         className={styles.socials}
       >
-        <a href="#">
+        <a href="https://www.instagram.com/acetrixofficial/?igsh=MWN4c2Y4NW1qOGhzOA%3D%3D">
           <FaInstagram />
         </a>
-        <a href="#">
+        <a href="https://discord.com/invite/kCVCtEVs4f">
           <FaDiscord />
         </a>
-        <a href="#">
+        <a href="https://www.youtube.com/@acetrix2022">
           <FaYoutube />
         </a>
-        <a href="#">
+        <a href="https://www.linkedin.com/company/acetrix/">
           <FaLinkedin />
         </a>
       </motion.div>
