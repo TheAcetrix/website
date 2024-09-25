@@ -133,6 +133,7 @@ const Events = () => {
       >
         <h2>Duke o death</h2>
         <div className={styles.wrapper}>
+          {/* For moving left to right direction="right" , as done below*/}
           <Marquee direction="right">
             <Image
               src={"/images/founder-img.jpg"}
@@ -320,6 +321,7 @@ const Events = () => {
           >
             <h2>Valfire</h2>
             <div className={styles.wrapper}>
+              {/* For moving left to right direction="right" , as done below*/}
               <Marquee direction="right">
                 <Image
                   src={"/images/founder-img.jpg"}
