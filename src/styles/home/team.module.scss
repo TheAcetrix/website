@@ -65,6 +65,17 @@
     .userCard:hover {
       transform: scale(1.4);
     }
+
+    .coreCard {
+      margin: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .coreCard:hover {
+      transform: scale(1.4);
+    }
+
   }
 
   .userInfo {
