@@ -36,16 +36,29 @@
   }
 
   .teamContainer {
-    border: 2px solid #c788ff;
+    // border: 2px solid #c788ff;
+    border-top: 2px solid #c788ff;
+  border-bottom: 2px solid #c788ff;
     border-radius: 30px;
     width: 100%;
     margin: 2rem auto 0;
     display: flex;
     align-items: center;
     position: relative;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+      );
 
     @include tablet() {
-      width: 90%;
+      width: 95%;
+    }
+
+    @include phone(){
+      width: 100%;
     }
 
     @include desktop() {
@@ -76,6 +89,15 @@
       transform: scale(1.4);
     }
 
+    .alumniCard {
+      margin: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .alumniCard:hover {
+      transform: scale(1.4);
+    }
   }
 
   .userInfo {

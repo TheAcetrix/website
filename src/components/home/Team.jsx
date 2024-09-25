@@ -9,6 +9,7 @@ import styles from "../../styles/home/team.module.scss";
 import Marquee from "react-fast-marquee";
 import { leads } from "@/configs/leads.config";
 import { core as coreData } from "@/configs/core.config";
+import { alumni as alumniData } from "@/configs/alumni.config";
 
 const UserCard = ({ styles, user, showUser, setShowUser, setUser }) => {
   return (
@@ -70,12 +71,45 @@ const CoreCard = ({ styles, user, showUser, setShowUser, setUser }) => {
   );
 };
 
+const AlumniCard = ({ styles, user, showUser, setShowUser, setUser }) => {
+  return (
+    <div
+      className={styles.alumniCard + " group"}
+      onMouseEnter={() => {
+        setShowUser(true);
+        setUser({ name: user.name, role: user.role });
+      }}
+      onMouseOver={() => {
+        setShowUser(true);
+        setUser({ name: user.name, role: user.role });
+      }}
+      onMouseLeave={() => {
+        setShowUser(false);
+        setUser({ name: "", role: "" });
+      }}
+    >
+      <a href={user.link}>
+        <Image
+          src={user.image}
+          alt="founder"
+          width={200}
+          height={200}
+          className="rounded-full  w-20 h-20 md:w-40 md:h-40 ring-2 ring-[#c788ff] group-hover:ring-white transition-all duration-500 ease-in-out"
+        />
+      </a>
+    </div>
+  );
+};
+
 const Team = () => {
   const [user, setUser] = useState({ name: "", role: "" });
   const [showUser, setShowUser] = useState(false);
 
   const [coreUser, setCoreUser] = useState({ name: "", role: "" });
   const [showCoreUser, setShowCoreUser] = useState(false);
+
+  const [alumniUser, setAlumniUser] = useState({ name: "", role: "" });
+  const [showAlumniUser, setShowAlumniUser] = useState(false);
 
   return (
     <>
@@ -88,7 +122,7 @@ const Team = () => {
           variants={fadeIn("up", "spring", 0.6, 1.25)}
           className={styles.teamContainer}
         >
-          <Marquee pauseOnHover={true}>
+          <Marquee>
             {[...leads].map((lead, idx) => (
               <UserCard
                 key={idx}
@@ -117,7 +151,7 @@ const Team = () => {
           variants={fadeIn("up", "spring", 0.6, 1.25)}
           className={styles.teamContainer}
         >
-          <Marquee pauseOnHover={true}>
+          <Marquee>
             {[...coreData].map((core, idx) => (
               <CoreCard
                 key={idx}
