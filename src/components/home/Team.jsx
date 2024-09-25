@@ -122,7 +122,7 @@ const Team = () => {
           variants={fadeIn("up", "spring", 0.6, 1.25)}
           className={styles.teamContainer}
         >
-          <Marquee>
+          <Marquee pauseOnHover={true}>
             {[...leads].map((lead, idx) => (
               <UserCard
                 key={idx}
@@ -151,7 +151,7 @@ const Team = () => {
           variants={fadeIn("up", "spring", 0.6, 1.25)}
           className={styles.teamContainer}
         >
-          <Marquee>
+          <Marquee pauseOnHover={true}>
             {[...coreData].map((core, idx) => (
               <CoreCard
                 key={idx}
