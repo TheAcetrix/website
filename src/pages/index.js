@@ -30,7 +30,7 @@ export default function Home({ eventsArr }) {
       <Landing />
       <About />
       <Founders />
-      <Team />
+      {/* <Team /> */}
       <Events />
       <Contact />
       <Footer />
