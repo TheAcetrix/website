@@ -30,7 +30,7 @@ const About = () => {
         </p>
 
         <div className={styles.cta}>
-          <CallToAction href="https://discord.gg/acetrix">
+          <CallToAction href="https://discord.com/invite/kCVCtEVs4f">
             Learn More
           </CallToAction>
 

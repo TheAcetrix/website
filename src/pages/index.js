@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
 import styles from "../styles/home/home.module.scss";
 import Image from "next/image";
@@ -15,33 +16,25 @@ import { getEvents, getFounders } from "@/lib/appwrite";
 import { useMyContext } from "@/context";
 
 export default function Home({ eventsArr }) {
-  const { setEventsData } = useMyContext();
-
-  useEffect(() => {
-    setEventsData(eventsArr);
-  }, []);
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
-    <div className={styles.homePage}>
+    <>
+      <Head>
+        <title>Acetrix - Official Gaming Community of SSTC</title>
+        <meta
+          name="description"
+          content="Welcome to Acetrix, the official gaming community of SSTC. Join us for epic events, game jams, and more!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <Landing />
       <About />
       <Founders />
+      <Team />
       <Events />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
 

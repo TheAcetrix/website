@@ -34,7 +34,7 @@ const Landing = () => {
       <div className={styles.cta}>
         <CallToAction
           variants={zoomIn(0.3, 0.75)}
-          href="https://discord.gg/acetrix"
+          href="https://discord.com/invite/kCVCtEVs4f"
           icon={<FaDiscord className="w-6 h-6" />}
         >
           Discord
