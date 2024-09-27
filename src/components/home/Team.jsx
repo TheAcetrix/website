@@ -173,6 +173,35 @@ const Team = () => {
           <p>{coreUser.role || "<3"}</p>
         </motion.div>
       </div>
+      <div className={styles.team}>
+        <motion.h1 variants={textVariant(0.2)}>Previous Alumni</motion.h1>
+
+        <motion.div
+          variants={fadeIn("up", "spring", 0.6, 1.25)}
+          className={styles.teamContainer}
+        >
+          <Marquee pauseOnHover={true}>
+            {[...alumniData].map((alumni, idx) => (
+              <AlumniCard
+                key={idx}
+                user={alumni}
+                styles={styles}
+                showUser={showAlumniUser}
+                setShowUser={setShowAlumniUser}
+                setUser={setAlumniUser}
+              />
+            ))}
+          </Marquee>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("up", "spring", 1, 1.45)}
+          className={styles.userInfo + " "}
+        >
+          <h2>{alumniUser.name || "Awesome people behind acetrix"}</h2>
+          <p>{alumniUser.role || "<3"}</p>
+        </motion.div>
+      </div>
     </>
   );
 };

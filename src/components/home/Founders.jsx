@@ -49,7 +49,6 @@ const Founders = () => {
           ))}
         </div>
       </div>
-      <Team />
     </>
   );
 };
