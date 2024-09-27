@@ -16,9 +16,25 @@ import { getEvents, getFounders } from "@/lib/appwrite";
 import { useMyContext } from "@/context";
 
 export default function Home({ eventsArr }) {
+  const { setEventsData } = useMyContext();
+
+  useEffect(() => {
+    setEventsData(eventsArr);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <>
-      <Head>
+      <Head lang="en">
         <title>Acetrix - Official Gaming Community of SSTC</title>
         <meta
           name="description"
